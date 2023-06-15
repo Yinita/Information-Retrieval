@@ -88,6 +88,52 @@ To master classic link analysis algorithms such as PageRank and HITS.
  
 #### Experimental requirements:
 
+![image](https://github.com/Yinita/Information-Retrieval/assets/59158324/0ebc47d9-a2b5-4a0d-93e6-679b33d693eb)
+
 1. Implementation of PageRank algorithm
-2. Calculate PageRank value manually:
+2. Calculate PageRank value manually
+
+![image](https://github.com/Yinita/Information-Retrieval/assets/59158324/6e377982-4aee-428a-a9c8-fb52a9311463)
+
 3. HITS algorithm implementation
+
+
+### final Experiment, Functions:
+
+#### Basic functions:
+
+1. Use open-source Chinese word segmentation programs (such as stuttering word segmentation) to segment Chinese sentences, and provide detailed instructions and configurations.
+
+2. Use the open source English Stemming algorithm (such as the Porter algorithm) to process English documents and queries, and explain how to call related functions.
+
+3. Develop an information retrieval system that supports user interaction, including input boxes and result displays (including hyperlinks), with a simple and aesthetically pleasing interface.
+
+4. Use Inverted index to store data and analyze the Time complexity of Inverted index construction.
+
+5. Use TF-IDF as the weight calculation method, provide Formula, explain the symbols and code implementation in the formula, and analyze Time complexity.
+
+6. Use cosine similarity to calculate the correlation score of<query, document>, provide Formula, explain the symbols and code implementation in the formula, and analyze Time complexity.
+
+7. Sort the matched documents based on the correlation score, return the top 10 results, and display the query time.
+
+#### Featured features:
+
+1. Real time update of system data, supporting large-scale data download or crawling.
+
+2. Optimize the storage Space complexity of dictionary or inverted record table.
+
+3. Support indexing news attachments.
+
+4. Support displaying non textual content, such as images.
+
+5. Support search function by domain, including news classification for different domains.
+
+6. Provide friendly user interaction, such as font coloring in red, to help users understand the results.
+
+7. Consider other factors besides cosine similarity to sort the results, such as timeliness.
+
+8. Support query suggestions and provide candidate queries.
+
+9. Support query and error correction, identify error terms and provide candidate queries.
+
+10. Other functions that are considered distinctive should be clearly explained.
