@@ -1,0 +1,216 @@
+<td style="font-size: 9pt;border:1px dashed #666666;" align="center" width="380">
+<select name="dayy" style="font-size: 9pt" size="1">
+<option value="1#今天">今天</option>
+<option value="7#一周内" selected="">一周内</option>
+<option value="30#30天内">30天内</option>
+
+<option value="2023">2023年</option>
+
+<option value="2022">2022年</option>
+
+<option value="2021">2021年</option>
+
+<option value="2020">2020年</option>
+
+<option value="2019">2019年</option>
+
+<option value="2018">2018年</option>
+
+<option value="2017">2017年</option>
+
+<option value="2016">2016年</option>
+
+<option value="2015">2015年</option>
+
+<option value="2014">2014年</option>
+
+</select><select style="width:120px" name="from_username" size="1">
+<option value="">全部发文单位</option>
+
+<option value="党政办公室">1.党政办公室</option>
+
+<option value="组织部">2.组织部</option>
+
+<option value="统战部">3.统战部</option>
+
+<option value="宣传部">4.宣传部</option>
+
+<option value="纪检（监察）室">5.纪检（监察）室</option>
+
+<option value="校工会">6.校工会</option>
+
+<option value="妇女委员会">7.妇女委员会</option>
+
+<option value="校团委">8.校团委</option>
+
+<option value="教务部">9.教务部</option>
+
+<option value="招生办公室">10.招生办公室</option>
+
+<option value="创新创业教育中心">11.创新创业教育中心</option>
+
+<option value="研究生院">12.研究生院</option>
+
+<option value="党委研工部">13.党委研工部</option>
+
+<option value="发展规划部">14.发展规划部</option>
+
+<option value="社会科学部">15.社会科学部</option>
+
+<option value="学报社科版">16.学报社科版</option>
+
+<option value="科学技术部">17.科学技术部</option>
+
+<option value="学报理工版">18.学报理工版</option>
+
+<option value="学生部">19.学生部</option>
+
+<option value="党委学工部">20.党委学工部</option>
+
+<option value="国际交流与合作部">21.国际交流与合作部</option>
+
+<option value="人力资源部">22.人力资源部</option>
+
+<option value="党委教师工作部">23.党委教师工作部</option>
+
+<option value="计划财务部">24.计划财务部</option>
+
+<option value="招投标管理中心">25.招投标管理中心</option>
+
+<option value="实验室与国有资产管理部">26.实验室与国有资产管理部</option>
+
+<option value="审计室">27.审计室</option>
+
+<option value="后勤保障部">28.后勤保障部</option>
+
+<option value="后勤保障部党委">29.后勤保障部党委</option>
+
+<option value="安全保卫部">30.安全保卫部</option>
+
+<option value="离退休办公室">31.离退休办公室</option>
+
+<option value="校友联络部">32.校友联络部</option>
+
+<option value="教育发展基金会">33.教育发展基金会</option>
+
+<option value="机关党委">34.机关党委</option>
+
+<option value="丽湖校区管理办公室">35.丽湖校区管理办公室</option>
+
+<option value="教育学部">36.教育学部</option>
+
+<option value="艺术学部">37.艺术学部</option>
+
+<option value="医学部">38.医学部</option>
+
+<option value="马克思主义学院">39.马克思主义学院</option>
+
+<option value="经济学院">40.经济学院</option>
+
+<option value="法学院">41.法学院</option>
+
+<option value="心理学院">42.心理学院</option>
+
+<option value="体育学院">43.体育学院</option>
+
+<option value="人文学院">44.人文学院</option>
+
+<option value="外国语学院">45.外国语学院</option>
+
+<option value="传播学院">46.传播学院</option>
+
+<option value="数学与统计学院">47.数学与统计学院</option>
+
+<option value="物理与光电工程学院">48.物理与光电工程学院</option>
+
+<option value="化学与环境工程学院">49.化学与环境工程学院</option>
+
+<option value="生命与海洋科学学院">50.生命与海洋科学学院</option>
+
+<option value="机电与控制工程学院">51.机电与控制工程学院</option>
+
+<option value="材料学院">52.材料学院</option>
+
+<option value="电子与信息工程学院">53.电子与信息工程学院</option>
+
+<option value="计算机与软件学院">54.计算机与软件学院</option>
+
+<option value="建筑与城市规划学院">55.建筑与城市规划学院</option>
+
+<option value="土木与交通工程学院">56.土木与交通工程学院</option>
+
+<option value="管理学院">57.管理学院</option>
+
+<option value="政府管理学院">58.政府管理学院</option>
+
+<option value="高等研究院">59.高等研究院</option>
+
+<option value="金融科技学院">60.金融科技学院</option>
+
+<option value="国际交流学院">61.国际交流学院</option>
+
+<option value="继续教育学院">62.继续教育学院</option>
+
+<option value="图书馆">63.图书馆</option>
+
+<option value="图书馆党总支">64.图书馆党总支</option>
+
+<option value="档案馆">65.档案馆</option>
+
+<option value="信息中心">66.信息中心</option>
+
+<option value="信息中心党总支">67.信息中心党总支</option>
+
+<option value="资产经营公司">68.资产经营公司</option>
+
+<option value="技术转化中心">69.技术转化中心</option>
+
+<option value="深大总医院">70.深大总医院</option>
+
+<option value="深大附属华南医院">71.深大附属华南医院</option>
+
+<option value="校医院">72.校医院</option>
+
+<option value="附属教育集团">73.附属教育集团</option>
+
+<option value="深大附属中学">74.深大附属中学</option>
+
+<option value="深大附属实验中学">75.深大附属实验中学</option>
+
+<option value="中国经济特区研究中心">76.中国经济特区研究中心</option>
+
+<option value="港澳基本法研究中心">77.港澳基本法研究中心</option>
+
+<option value="文化产业研究院">78.文化产业研究院</option>
+
+<option value="美学与文艺批评研究院">79.美学与文艺批评研究院</option>
+
+<option value="饶宗颐文化研究院">80.饶宗颐文化研究院</option>
+
+<option value="中国海外利益研究院">81.中国海外利益研究院</option>
+
+<option value="微纳光电子学研究院">82.微纳光电子学研究院</option>
+
+<option value="创新技术研究院">83.创新技术研究院</option>
+
+<option value="大数据系统计算技术国家工程实验室">84.大数据系统计算技术国家工程实验室</option>
+
+<option value="心理健康教育与咨询中心">85.心理健康教育与咨询中心</option>
+
+<option value="人工智能与数字经济广东省实验室（深圳）">86.人工智能与数字经济广东省实验室（深圳）</option>
+
+<option value="深圳香蜜湖国际金融科技研究院">87.深圳香蜜湖国际金融科技研究院</option>
+
+</select>标题关键字<input name="keyword" id="keyword" maxlength="4" size="8" value=""><input type="text" name="tnull" size="1" disabled="" style="border-width:0;width:0px">
+<input type="submit" value="搜索" name="searchb1" onclick="if(!this.form.keyword.value&amp;&amp;!this.form.from_username.value&amp;&amp;!(this.form.dayy.value=='1#今天'||this.form.dayy.value=='7#一周内'||this.form.dayy.value=='30#30天内')){alert('请选择发文单位或输入标题关键字');return false;}"></td>
+
+
+
+<tr>
+<td align="center" height="32px">1</td>
+<td align="center" style="font-size: 9pt"><a href="?infotype=生活" class="L-Affiliate-Tagged">生活</a></td>
+<td align="center" style="font-size: 9pt"><a href="#" onclick="document.fsearch1.from_username.value='党政办公室';document.fsearch1.dayy.value='30#30天内';document.fsearch1.searchb1.click();" class="L-Affiliate-Tagged">党政办公室</a></td>
+<td align="left"><b>·</b>&nbsp;<a target="_blank" class="fontcolor3 L-Affiliate-Tagged" href="view.asp?id=487359">粤海校区1月1日核酸检测通知</a></td>
+<td align="center"></td>
+<td align="center" style="font-size: 9pt">2022-12-31</td>
+</tr>
