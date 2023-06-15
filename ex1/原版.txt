@@ -1,0 +1,217 @@
+class Inverted_index:  # this class contains dict, a list that records NO. of sentences
+    def __init__(self, words):  # dic is used to create a list that no repeat
+        self.line_list = []
+        self.word_list = []
+        self.inverted_index = {}
+        dic = {}
+        index = 0
+        for line in words:  # process each line
+            self.line_list.append(line)
+            tmp = line.split()
+            for i in tmp:
+                i = Pre_process(i)
+                if i not in dic:
+                    dic[i] = 1
+                    self.inverted_index[index] = []
+                    self.word_list.append(i)
+                    index += 1
+        self.size = len(dic)  # size
+        self.word_list.sort()
+        line_index = 0
+        for line in self.line_list:  # process each line
+            tmp_line = line.split()  # split the words in each line
+            for word_in_line in tmp_line:  # for each words in line,match and record them in the dict
+                self.insert(word_in_line, line_index)
+            line_index += 1
+        # self.inverted_index=self.size*[[]]    二维列表，修改每个元素会导致整列变化无法使用
+
+    def insert(self, word, sentence_index):
+        word = Pre_process(word)
+        word_index = Find_index(word, self.word_list)  # find the pos of the word in the list
+        # print(word_index)
+        # print(word)
+        tmp = self.inverted_index[word_index]
+        tmp.append(sentence_index)
+        self.inverted_index[word_index] = tmp
+
+    def search(self, word):
+        index = Find_index(word, self.word_list)
+        if (index == -1):  # search failed
+            return -1
+        else:
+            return self.inverted_index[index]
+
+    def print(self, list=None):  # 缺省时用None表示
+        if (list == None):
+            print(self.word_list) #完整发一遍字典
+            print(self.inverted_index)
+        else:
+            for i in list:
+                if (i > len(self.line_list)):
+                    print("dictionary ERROR")
+                    return -1
+                print(self.line_list[i])
+            return
+
+
+def Pre_process(word):
+    tmp = word
+    tmp = tmp.replace(':', '')
+    tmp = tmp.replace(',', '')
+    tmp = tmp.replace('.', '')
+    tmp = tmp.lower()
+    return tmp
+
+
+def Find_index(word, list):
+    index = 0  # find the index of the word in list
+    for i in list:
+        if word == i:
+            return index
+        else:
+            index += 1
+    return -1  # illegal word
+
+
+class resolution:
+    def __init__(self, sentence, inverted_index):
+        self.result = []
+        self.result = self.process(sentence, inverted_index)
+
+    def processing(self, A, keyword, B, inverted_index):
+        # A,B can be a 1.list of book or a 2.word or a 3.list of function;if words, they all need to be transformed to list
+        if (isinstance(A, list) != 1):
+            A = inverted_index.search(A)
+            # 2.
+        else:
+            if (isinstance(A[0], int) != 1):
+                A = self.resolve(A, inverted_index)
+                # 3.
+
+        if (isinstance(B, list) != 1):
+            B = inverted_index.search(B)
+            # 2.
+        else:
+            if (isinstance(B[0], int) != 1):
+                B = self.resolve(B, inverted_index)
+                # 3.
+        # A and B now are all list of book
+        result = []
+        if (keyword == 'AND'):
+            for i in A:
+                if i in B:
+                    result.append(i)
+        if (keyword == 'ANDNOT'):
+            for i in A:
+                if i not in B:
+                    result.append(i)
+        if (keyword == 'OR'):
+            result.extend(A)
+            for i in B:
+                if i not in result:
+                    result.append(i)
+            if(result!=[]):
+                result.sort()
+
+        return result
+
+    def resolve(self, command_list, Inverted_index):
+        while len(command_list) > 2:  # need to process, if it is 1 then pass
+            # A command B, first step is finding A, second step is finding operator, the last step is finding B
+            if (command_list[0] == '('):
+                brackets_index = 1  # brackets'('+1,')'-1
+                for i in range(1, len(command_list)):
+                    if (command_list[i] == '('):
+                        brackets_index += 1
+                    if (command_list[i] == ')'):
+                        brackets_index -= 1
+                    if (brackets_index == 0):
+                        A = command_list[1:i]
+                        command_list = command_list[i+1:]
+                        break
+                if(brackets_index!=0):
+                    print("brackets number error, pls check your command")
+                    return -1
+            else:
+                A = command_list[0]
+                command_list = command_list[1:]
+            # find A successfully
+            #now we need to consider if the command is (A AND B),which means there is no op and B
+            if(command_list==[]):
+                return self.resolve(A, Inverted_index)
+
+            if (command_list[0] == 'and' or command_list[0] == 'or'):
+                if (command_list[0] == 'and' and command_list[1] == 'not'):
+                    keyword = 'ANDNOT'
+                    command_list = command_list[2:]
+
+                if (command_list[0] == 'and'):
+                    keyword = 'AND'
+                    command_list = command_list[1:]
+                if (command_list[0] == 'or'):
+                    keyword = 'OR'
+                    command_list = command_list[1:]
+                # find operator successfully
+            else:
+                print("ERROR, lack of operator")
+                return -1
+            if (command_list[0] == '('):
+                brackets_index = 1  # brackets'('+1,')'-1
+                for i in range(1, len(command_list)):
+                    if (command_list[i] == '('):
+                        brackets_index += 1
+                    if (command_list[i] == ')'):
+                        brackets_index -= 1
+                    if (brackets_index == 0):
+                        B = command_list[1:i]
+                        command_list = command_list[i + 1:]
+                        break
+                if (brackets_index != 0):
+                    print("brackets number error, pls check your command")
+                    return -1
+            else:
+                B = command_list[0]
+                command_list = command_list[1:]
+                # find B successfully
+            command_list.insert(0, self.processing(A, keyword, B, Inverted_index))
+        # processing A op B
+        if (len(command_list) == 1):
+            if (isinstance(command_list[0], list)):
+                return command_list[0]
+            else:
+                return Inverted_index.search(command_list[0]) #only one word
+
+    def process(self, sentence, inverted_index):
+        command_list = sentence.split()
+        for i in range(len(command_list)-1,-1,-1):  # remove the inside ()
+            command_list[i] = Pre_process(command_list[i])  # fix the word AppLe - > apple
+            index=0
+            while (command_list[i][-1] == ')'and command_list[i] != ')'):
+                index += 1
+                command_list[i] = command_list[i][:-1]
+            for j in range(0, index):
+                command_list.insert(i+1, ')')  # add ')' in the next pos
+            index=0
+            while (command_list[i][0] == '(' and len(command_list[i])!=1):
+                index+=1
+                command_list[i] = command_list[i][1:]
+            for j in range(0,index):
+                command_list.insert(i, '(')  # add '(' in the pos
+        result_list = self.resolve(command_list, inverted_index)  # begin resolve
+        print(result_list)
+        return result_list
+
+
+if __name__ == "__main__":
+    try:
+        file = open('D:\homework\\2023 -1l\IR\ex1\HW1.txt', 'r')
+        dict = Inverted_index(file)  # create the dictionary
+        dict.print()
+        n = input()
+        for i in range(0, int(n)):
+            command = input()
+            answer = resolution(command, dict)
+            dict.print(answer.result)
+
+    finally:
+        file.close()
